@@ -9,10 +9,15 @@ import com.youtube.dao.*; // imports the package which contains the data connect
 
 @Path("/postgres")
 
+
 public class PostgresStatus 
 {
 
-//@Path("/database")
+
+
+
+	@GET
+	@Path("/version")
 	@Produces(MediaType.TEXT_HTML)
 	public String returnDatabaseStatus() throws Exception
 	{
@@ -22,14 +27,14 @@ public class PostgresStatus
 		String myString = null; //stores values from data set
 		
 
-		String returnString = "test";
-/* */
+		String returnString;
+/**/ 
 		Connection conn = null;
 		
 		try
 		{
 			conn = PostgresDataTest.localPostgresConn().getConnection();
-			query = conn.prepareStatement("select name from test.city " 
+			query = conn.prepareStatement("select name from city " 
 			  + "where city.id=1");
 			ResultSet rs = query.executeQuery();
 			
@@ -39,7 +44,7 @@ public class PostgresStatus
 			}
 			
 			query.close();
-			returnString = "<p>First PK is : " 
+			returnString = "<p>First city is : " 
 					+ myString + "</p";
 		}
 		
@@ -47,8 +52,8 @@ public class PostgresStatus
 		{
 			e.printStackTrace();
 
-			returnString = "<p>Sorry, there was an error with the database connection.</p>";
-/* */
+			returnString = "<p>Sorry, there was an error with the database connection2.</p>";
+/**/ 
 		}
 
 		finally

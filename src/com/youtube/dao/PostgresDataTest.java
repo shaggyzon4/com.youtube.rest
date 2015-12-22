@@ -27,6 +27,7 @@ public class PostgresDataTest
 		catch (Exception e)
 		{
 			e.printStackTrace();
+			System.out.println("IT'S NO GOOD! ABORT!");
 		}
 		System.out.println("it's a good connection");
 		return localPostgres;
