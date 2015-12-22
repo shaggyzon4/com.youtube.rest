@@ -33,7 +33,7 @@ public class V1_status {
 	@Path("/version")
 	@Produces(MediaType.TEXT_HTML)
 	public String returnVersion(){
-		return "<p>Versio12n: </p>" + API_VERSION;
+		return "<p>Versio123n: </p>" + API_VERSION;
 	}	// end method
 	
 	//connect to DB and get a string
