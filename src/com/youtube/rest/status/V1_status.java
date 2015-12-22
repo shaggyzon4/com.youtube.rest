@@ -17,7 +17,8 @@ public class V1_status {
 	@Produces(MediaType.TEXT_HTML)
 	
 	// looks for an HTML "GET" and returns a TEXT_HTML String object
-	// only occurs when visiting the context path, e.g.: http://localhost:7001/com.youtube.rest/api/v1/status
+	// only occurs when visiting the exact context path
+	// e.g.: http://localhost:7001/com.youtube.rest/api/v1/status
 	public String returnTitle(){
 		return "<p>Java Web Service</p>";
 	}
@@ -25,13 +26,14 @@ public class V1_status {
 
 	
 	// looks for an HTML "GET" and returns a TEXT_HTML String object
-	// only occurs when visiting the context path, e.g.: http://localhost:7001/com.youtube.rest/api/v1/status/version
+	// only occurs when visiting the combined context path
+	// e.g.: http://localhost:7001/com.youtube.rest/api/v1/status/version
 	
 	@GET
 	@Path("/version")
 	@Produces(MediaType.TEXT_HTML)
 	public String returnVersion(){
-		return "<p>Version: </p>" + API_VERSION;
+		return "<p>Versio12n: </p>" + API_VERSION;
 	}	// end method
 	
 	//connect to DB and get a string
